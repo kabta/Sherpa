@@ -114,7 +114,7 @@ public class LoginFragment extends Fragment {
                 }
             }
         });
-
+//go to register form
         registerTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
