@@ -15,10 +15,6 @@
         android:label="Explore"
         tools:layout="@layout/activity_main" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:label="Notification"
-        tools:layout="@layout/activity_main" />
 
     <fragment
         android:id="@+id/navigation_map"

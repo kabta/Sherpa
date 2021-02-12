@@ -12,11 +12,7 @@
         android:icon="@drawable/ic_explore_black"
         android:id="@+id/navigation_explore"/>
 
-    <item
-        android:title="Notificaton"
-        android:icon="@drawable/ic_notification"
-        android:id="@+id/navigation_notifications"
-       />
+
     <item
         android:title="Map"
         android:icon="@drawable/ic_maps"

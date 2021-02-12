@@ -82,9 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         navigationView.setSelectedItemId(R.id.navigation_explore);
                         break;
-                    case 2:
-                        navigationView.setSelectedItemId(R.id.navigation_notifications);
-                        break;
+
                     case 3:
                         navigationView.setSelectedItemId(R.id.navigation_map);
                         break;
@@ -107,9 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_explore:
                         viewPager.setCurrentItem(1);
                         break;
-                    case R.id.navigation_notifications:
-                        viewPager.setCurrentItem(2);
-                        break;
+
                     case R.id.navigation_map:
                         viewPager.setCurrentItem(3);
                         break;
