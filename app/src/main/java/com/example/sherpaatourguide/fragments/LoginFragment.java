@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sherpaatourguide.R;
-//import com.example.sherpaatourguide.activity.AddDataActivity;
+import com.example.sherpaatourguide.activity.AddDataActivity;
 import com.example.sherpaatourguide.activity.LocationPermissionActivity;
 import com.example.sherpaatourguide.activity.ui.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -150,11 +150,11 @@ public class LoginFragment extends Fragment {
             passwordField.setError("Please fill this area");
             return false;
         }
-
-        if(password.length() <8){
+        if (password.length() < 8) {
             passwordField.setError("Password length is short");
-            return  false;
+            return false;
         }
+
 
         if(email =="admin" && password =="admin"){
             createAToast("Admin Login");
@@ -169,7 +169,7 @@ public class LoginFragment extends Fragment {
 
     void createAToast(String message){
 
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
      }
 
 
@@ -179,9 +179,9 @@ public class LoginFragment extends Fragment {
         getActivity().finish();
     }
 
-   /** public void openAdmin(){
+    public void openAdmin(){
         Intent adminIntent = new Intent(getActivity(), AddDataActivity.class);
         startActivity(adminIntent);
         getActivity().finish();
-    }**/
+    }
 }

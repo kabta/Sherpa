@@ -17,9 +17,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.example.sherpaatourguide.R;
-import com.example.sherpaatourguide.activity.ui.notifications.NotificationsFragment;
 import com.example.sherpaatourguide.home.DashboardFragment;
-import com.example.sherpaatourguide.home.ExploreAdapter;
 import com.example.sherpaatourguide.home.ExploreFragment;
 import com.example.sherpaatourguide.home.MapsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new DashboardFragment());
         adapter.addFragment(new ExploreFragment());
-        adapter.addFragment(new NotificationsFragment());
+
         adapter.addFragment(new MapsFragment());
         viewPager.setAdapter(adapter);
 
@@ -146,13 +144,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.text_notifications) {
-            startActivity(new Intent(this, NotificationsFragment.class));
-        }
-        else
-    {
+        if (item.getItemId() == R.id.map) {
             startActivity(new Intent(this, MapsFragment.class));
         }
+
         return super.onOptionsItemSelected(item) || drawerToggle.onOptionsItemSelected(item);
     }
 

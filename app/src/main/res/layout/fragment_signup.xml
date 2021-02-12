@@ -23,8 +23,6 @@
         android:textColor="#582EA3"
         android:textSize="24sp" />
 
-
-
     <EditText
         android:id="@+id/emailFieldET"
         android:layout_width="match_parent"

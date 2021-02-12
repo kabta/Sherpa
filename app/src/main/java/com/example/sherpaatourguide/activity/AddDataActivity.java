@@ -1,4 +1,4 @@
-/**package com.example.sherpaatourguide.activity;
+package com.example.sherpaatourguide.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -77,14 +77,14 @@ public class AddDataActivity extends AppCompatActivity implements AdapterView.On
         private String getExtension(Uri uri) {
             ContentResolver cr = getContentResolver();
             MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
-//            return mimeTypeMap.getExtensionFromMimeType(cr.getType(uri));
+             return mimeTypeMap.getExtensionFromMimeType(cr.getType(uri));
         }
         private void Fileuploader()
         {
             String imageid;
             imageid = System.currentTimeMillis()+"."+getExtension(imguri);
             datas.setName(name.getText().toString().trim());
-            datas.setDescription(description.getText().to);
+        //    datas.setDescription(description.getText().to);
             StorageReference Ref = mStorageRef.child((imageid));
             Ref.putFile(imguri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -160,10 +160,10 @@ public class AddDataActivity extends AppCompatActivity implements AdapterView.On
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==1 && resultCode ==RESULT_OK && data!= null && data.getData()!=null){
             imguri = data.getData();
-            imguri.setImageURI(imguri);
+       //     imguri.setImageURI(imguri);
         }
         
     }
 
 
-}**/
+}
