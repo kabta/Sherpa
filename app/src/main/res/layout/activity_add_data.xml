@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:textColor="#CE000E0C"
-            android:text="Type"
+            android:text="Category"
             android:textSize="25dp"
             android:textStyle="bold" />
 
@@ -66,31 +66,17 @@
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
             android:textSize="25dp"
+            android:inputType="textMultiLine"
             android:textStyle="bold" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="4dp"
-            android:text="LOCATE ON MAP"
+            android:text="IMAGE"
             android:textColor="#CE000E0C"
             android:textSize="18sp"
             android:textStyle="bold" />
-        <EditText
-            android:id="@+id/mapLink"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="10dp"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="4dp"
-                android:text="IMAGE"
-                android:textColor="#CE000E0C"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="5dp"/>
+
             <ImageView
                 android:id="@+id/placeImage"
                 android:layout_width="match_parent"
@@ -99,35 +85,15 @@
                 android:textSize="25dp"
                 android:textStyle="bold"
                 />
-           <RelativeLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="5dp"
-               >
-               <Button
-                   android:id="@+id/choosebtn"
-                   android:layout_width="100dp"
-                   android:layout_height="50dp"
-                   android:text="Choose"
-                   />
-               <Button
-                   android:id="@+id/uploadBtn"
-                   android:layout_width="100dp"
-                   android:layout_height="50dp"
-                   android:layout_marginLeft="250dp"
-                   android:text="Upload" />
-           </RelativeLayout>
-
 
         <Button
-
             android:id="@+id/addBtn"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
-            android:background="#9CF0F8F7"
+            android:background="@color/colorPrimary"
             android:text="ADD"
-            android:textColor="#3F93D3"
+            android:textColor="@color/colorAccent"
             android:textSize="18sp"
             android:textStyle="bold" />
 

@@ -23,6 +23,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,7 +84,7 @@ public class LoginFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
@@ -94,22 +98,43 @@ public class LoginFragment extends Fragment {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              if( validateData()){
-                  String email = emailField.getText().toString();
-                  String password = passwordField.getText().toString();
-                  // openAdmin();
-                  fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                      @Override
-                      public void onComplete(@NonNull Task<AuthResult> task) {
-                          if(task.isSuccessful()) {
-                              createAToast("Login Successful");
-                              openHome();
-                          }
-                          else{
-                              createAToast("Error!!!");
-                          }
-                      }
-                  });
+                if( validateData()){
+                    String email = emailField.getText().toString();
+                    String password = passwordField.getText().toString();
+
+                    fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()) {
+
+                                String uid = task.getResult().getUser().getUid();
+                                FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                                firebaseDatabase.getReference().child("Users").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        int usertype = snapshot.getValue(Integer.class);
+                                        if(usertype== 0){
+
+                                        //    createAToast("Login Successful");
+                                            openHome();
+                                        }
+                                        if(usertype == 1){
+                                            createAToast("Admin Login Successful");
+
+                                            openAdmin();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
+                            }
+                            
+                        }
+                    });
 
                 }
             }
@@ -170,7 +195,7 @@ public class LoginFragment extends Fragment {
     void createAToast(String message){
 
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-     }
+    }
 
 
     void openHome() {

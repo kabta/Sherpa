@@ -3,10 +3,17 @@ package com.example.sherpaatourguide.activity;
 public class Datas {
     private String Name;
     private String Description;
-    private String Maplink;
+    private String Category;
     private String Imageid;
 
     public Datas() {
+    }
+    public String getCategory() {
+        return Category;
+    }
+
+    public void setCategory(String category) {
+        Category = category;
     }
 
     public String getName() {
@@ -25,13 +32,7 @@ public class Datas {
         Description = description;
     }
 
-    public String getMaplink() {
-        return Maplink;
-    }
 
-    public void setMaplink(String maplink) {
-        Maplink = maplink;
-    }
 
     public String getImageid() {
         return Imageid;

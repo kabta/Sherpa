@@ -19,12 +19,14 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.sherpaatourguide.R;
+import com.example.sherpaatourguide.Users;
 import com.example.sherpaatourguide.activity.LocationPermissionActivity;
 import com.example.sherpaatourguide.activity.ui.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,6 +52,7 @@ public class SignupFragment extends Fragment {
     FirebaseAuth fAuth;
     Button signup;
     EditText emailField, passwordField, confirmpassword;
+    FirebaseDatabase firebaseDatabase;
 
     public SignupFragment() {
 
@@ -90,8 +93,8 @@ public class SignupFragment extends Fragment {
         passwordField = view.findViewById(R.id.passwordFieldET);
         confirmpassword = view.findViewById(R.id.confirmPasswordFieldET);
         signup = view.findViewById(R.id.signupBtn);
-
         fAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
         genderRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -125,6 +128,10 @@ public class SignupFragment extends Fragment {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
+                                String uid = task.getResult().getUser().getUid();
+
+                                Users user = new Users(uid, emailField.getText().toString(), passwordField.getText().toString(),0);
+                                firebaseDatabase.getReference().child("Users").child(uid).setValue(user);
                                 createAToast("User created successfully");
                                 openHome();
                             }else
@@ -179,7 +186,7 @@ public class SignupFragment extends Fragment {
         }
 
 
-               if (password.length() < 8) {
+        if (password.length() < 8) {
             passwordField.setError("Password length is short");
             return false;
         }

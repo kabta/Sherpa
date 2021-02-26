@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new DashboardFragment());
         adapter.addFragment(new ExploreFragment());
 
-        adapter.addFragment(new MapsFragment());
+       // adapter.addFragment(new MapsFragment());
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
