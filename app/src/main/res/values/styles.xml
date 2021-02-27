@@ -3,15 +3,15 @@
 
     <style name="AppTheme.Noaction" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#94B796E6</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryDark">@color/grey</item>
+        <item name="colorAccent">@color/grey</item>
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
+    <item name="colorPrimary">#D3FBD4</item>
+    <item name="colorPrimaryDark">#0F3910</item>
+    <item name="colorAccent">#264F70</item>
+</style>
 
 
     <style name="AppTheme.NoActionBar">

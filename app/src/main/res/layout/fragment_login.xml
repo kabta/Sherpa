@@ -106,10 +106,10 @@
 
         <Button
 
-            android:background="#9CF0F8F7"
+            android:background="@color/colorPrimary"
             android:id="@+id/loginBtn"
             android:layout_width="match_parent"
-            android:textColor="#3F93D3"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
             android:textSize="18sp"

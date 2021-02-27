@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:id="@+id/adminic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/ic_admin"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/helloadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello Admin!!!"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/adminic"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHOOSE CATEGORY :"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/helloadmin"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+       android:orientation="vertical">
+      <Button
+            android:id="@+id/destinationbtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Destinstion"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@color/colorPrimary"
+          android:layout_margin="10dp"
+            />
+        <Button
+            android:id="@+id/religiousbtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Religious Places"
+            android:textColor="@color/colorPrimaryDark" />
+        <Button
+            android:id="@+id/busbtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Bus Stations"
+            android:textColor="@color/colorPrimaryDark" />
+        <Button
+            android:id="@+id/restbtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text=" Restaurant and Hotels"
+            android:textColor="@color/colorPrimaryDark" />
+        <Button
+            android:id="@+id/shopbtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Shopping Malls"
+            android:textColor="@color/colorPrimaryDark" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+

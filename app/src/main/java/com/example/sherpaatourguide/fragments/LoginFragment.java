@@ -15,10 +15,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sherpaatourguide.AdminDashboardActivity;
 import com.example.sherpaatourguide.R;
-import com.example.sherpaatourguide.activity.AddDataActivity;
 import com.example.sherpaatourguide.activity.LocationPermissionActivity;
-import com.example.sherpaatourguide.activity.ui.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -205,7 +204,7 @@ public class LoginFragment extends Fragment {
     }
 
     public void openAdmin(){
-        Intent adminIntent = new Intent(getActivity(), AddDataActivity.class);
+        Intent adminIntent = new Intent(getActivity(), AdminDashboardActivity.class);
         startActivity(adminIntent);
         getActivity().finish();
     }

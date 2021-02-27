@@ -18,6 +18,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.ui.ShoppingActivity"
+            android:theme="@style/AppTheme.Noaction">
+
+        </activity>
+        <activity android:name=".activity.ui.RestaurantActivity"
+            android:theme="@style/AppTheme.Noaction"/>
+        <activity android:name=".activity.ui.BusStationActivity"
+            android:theme="@style/AppTheme.Noaction"/>
+        <activity android:name=".activity.ui.ReligiousActivity"
+            android:theme="@style/AppTheme.Noaction"/>
+        <activity android:name=".activity.DestinationActivity"
+            android:theme="@style/AppTheme.Noaction"/>
+        <activity android:name=".AdminDashboardActivity"
+            android:theme="@style/AppTheme.Noaction"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,7 +45,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".activity.LocationPermissionActivity" />
-        <activity android:name=".activity.AddDataActivity" />
         <activity android:name=".activity.ui.dashboard.ExploreActivity" />
         <activity android:name=".activity.RetrieveDetails" />
         <activity

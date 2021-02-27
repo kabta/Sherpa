@@ -20,7 +20,7 @@
         android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="Get on Board!"
-        android:textColor="#582EA3"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp" />
 
     <EditText
@@ -84,8 +84,9 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
         android:text="SignUp"
-        android:shadowColor="#101543"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
 
 
@@ -110,7 +111,7 @@
         android:layout_height="wrap_content"
         android:paddingStart="4dp"
         android:text="@string/login_text"
-        android:textColor="#3CE8E2"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp" />
     </LinearLayout>
   </LinearLayout>
