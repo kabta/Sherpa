@@ -29,12 +29,11 @@ public class EmergencyNumbersActivity<PermissionHelperer> extends AppCompatActiv
         setContentView(R.layout.activity_emergency_numbers);
 
         rootLayout = findViewById(R.id.rootLayout);
-        Toolbar toolbar = findViewById(R.id.toolbar);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+       // setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeButtonEnabled(true);
 
         List<EmergencyNumber> emergencyNumbers = new ArrayList<>();
         emergencyNumbers.add(new EmergencyNumber("102", "Main Ambulance"));

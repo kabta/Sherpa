@@ -9,20 +9,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 
 import com.example.sherpaatourguide.R;
+import com.example.sherpaatourguide.activity.ui.EventsActivity;
 import com.example.sherpaatourguide.activity.ui.dashboard.CommonPhrasesActivity;
 import com.example.sherpaatourguide.activity.ui.dashboard.EmergencyNumbersActivity;
-import com.example.sherpaatourguide.activity.ui.dashboard.EventsActivity;
 import com.example.sherpaatourguide.activity.ui.dashboard.FactsActivity;
+import com.example.sherpaatourguide.maps.MapActivity;
+import com.example.sherpaatourguide.weather.WeatherActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DashboardFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class DashboardFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -34,10 +31,6 @@ public class DashboardFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    TextView CommonPhrase;
-    TextView EmergencyNumber;
-    TextView Events;
-    TextView Facts;
 
     public DashboardFragment() {
         // Required empty public constructor
@@ -68,14 +61,14 @@ public class DashboardFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        CardView CommonPhrase= view.findViewById(R.id.common_phrases);
+        CardView CommonPhrase= view.findViewById(R.id.cv_CommonPhrases);
         CommonPhrase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), CommonPhrasesActivity.class));
             }
         });
-        CardView EmergencyNumber = view.findViewById(R.id.emergency_num);
+        CardView EmergencyNumber = view.findViewById(R.id.cv_Emergency);
         EmergencyNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +76,7 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        CardView Facts = view.findViewById(R.id.Facts);
+        CardView Facts = view.findViewById(R.id.cv_Facts);
         Facts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +85,7 @@ public class DashboardFragment extends Fragment {
         });
 
 
-        CardView Events = view.findViewById(R.id.events);
+        CardView Events = view.findViewById(R.id.cv_Events);
         Events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,6 +93,20 @@ public class DashboardFragment extends Fragment {
             }
         });
 
+        CardView Maps = view.findViewById(R.id.cv_Map);
+        Maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), MapActivity.class));
+            }
+        });
+        CardView Weather = view.findViewById(R.id.cv_Weather);
+        Weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), WeatherActivity.class));
+            }
+        });
 
         return view;
 

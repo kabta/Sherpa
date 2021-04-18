@@ -4,19 +4,16 @@
 
     <item
         android:title="Dashboard"
+        android:enabled="true"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:id="@+id/navigation_dashboard"/>
 
     <item
         android:title="Explore"
+        android:enabled="true"
         android:icon="@drawable/ic_explore_black"
         android:id="@+id/navigation_explore"/>
 
 
-    <item
-        android:title="Map"
-        android:icon="@drawable/ic_maps"
-        android:id="@+id/navigation_map"
-        />
-
+  
 </menu>

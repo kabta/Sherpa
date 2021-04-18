@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/ic_launcher_background"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+        <TextView
+            android:id="@+id/showdesName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Destination name"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:foregroundGravity="center_horizontal"
+            android:src="@drawable/busstation"
+            android:id="@+id/showdesImage"
+
+            />
+
+
+        <TextView
+            android:id="@+id/showdesDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="detail"
+            android:gravity="center_horizontal"
+            android:textSize="17dp"
+            android:textColor="@color/colorAccent"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+
+                android:drawableLeft="@drawable/ic_google_maps"
+                />
+            <TextView
+                android:id="@+id/showdesLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Location Details"
+                android:gravity="center_horizontal"
+                android:textSize="17dp"
+                android:textColor="@color/colorAccent"/>
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+</LinearLayout>

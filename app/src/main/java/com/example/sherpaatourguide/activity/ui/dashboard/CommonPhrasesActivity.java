@@ -20,12 +20,11 @@ public class CommonPhrasesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_phrases);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeButtonEnabled(true);
 
         List<CommonPhrase> commonPhrases = new ArrayList<>();
         commonPhrases.add(new CommonPhrase("Hello", "صباح الفل", "Sabah al ful", R.drawable.phrase_hello));

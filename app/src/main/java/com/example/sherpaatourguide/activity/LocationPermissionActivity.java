@@ -38,13 +38,14 @@ public class LocationPermissionActivity extends AppCompatActivity {
             finish();
             return;
         }
-
+//if location is not on
         btnGrant = findViewById(R.id.btn_grant);
 
         btnGrant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dexter.withActivity(LocationPermissionActivity.this)
+                //dexter for runtime permission
+                Dexter.withContext(LocationPermissionActivity.this)
                         .withPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                         .withListener(new PermissionListener() {
                             @Override

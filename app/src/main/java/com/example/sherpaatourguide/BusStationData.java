@@ -5,7 +5,7 @@ public class BusStationData {
     private String BusDescription;
     private String BusStationLocation;
     private String BusStationPhone;
-    private String ImageId;
+    private String BusImageId;
 
     public BusStationData() {
 
@@ -16,7 +16,7 @@ public class BusStationData {
         BusDescription = busDescription;
         BusStationLocation = busStationLocation;
         BusStationPhone = busStationPhone;
-        ImageId = imageId;
+        BusImageId = imageId;
     }
 
     public String getBusStationname() {
@@ -53,10 +53,10 @@ public class BusStationData {
 
 
     public String getImageId() {
-        return ImageId;
+        return BusImageId;
     }
 
     public void setImageId(String imageId) {
-        ImageId = imageId;
+        BusImageId = imageId;
     }
 }

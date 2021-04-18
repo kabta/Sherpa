@@ -1,56 +1,47 @@
 package com.example.sherpaatourguide.activity.ui.dashboard;
 
+
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Icon;
 import android.widget.ImageView;
 
 public class Explore {
+    private String categoryTitle;
+    private int categoryImg;
+    private String categoryDetails;
 
-    private String browse, text1, text2;
-    private int image1, image2;
 
 
-    public Explore(String browse, String text1, String text2, int image1, int image2) {
-        this.browse = browse;
-        this.text1 = text1;
-        this.text2 = text2;
-        this.image1 = image1;
-        this.image2 = image2;
+    public Explore() {
+
     }
 
-    public String getBrowse() {
-        return browse;
+    public Explore(String categoryTitle, int categoryImg, String categoryDetails) {
+        this.categoryTitle = categoryTitle;
+        this.categoryImg = categoryImg;
+        this.categoryDetails = categoryDetails;
     }
 
-    public void setBrowse(String browse) {
-
-        this.browse = browse;
+    public String getCategoryTitle() {
+        return categoryTitle;
     }
 
-    public String getText1() {
-        return text1;
+    public void setCategoryTitle(String categoryTitle) {
+        this.categoryTitle = categoryTitle;
     }
 
-    public void setText1(String text1) {
-        this.text1 = text1;
+    public int getCategoryImg() {
+        return categoryImg;
     }
 
-    public int getImage1() {
-        return image1;
+    public void setCategoryImg(int categoryImg) {
+        this.categoryImg = categoryImg;
     }
-    public void setImage1(int image1){
-        this.image1= image1;
-    }
-    public String getText2() {
-        return text2;
+    public String getCategoryDetails() {
+        return categoryDetails;
     }
 
-    public void setText2(String text2) {
-        this.text2 = text2;
-    }
-
-    public int getImage2() {
-        return image1;
-    }
-    public void setImage2(int image2){
-        this.image2= image2;
+    public void setCategoryDetails(String categoryDetails) {
+        this.categoryDetails = categoryDetails;
     }
 }

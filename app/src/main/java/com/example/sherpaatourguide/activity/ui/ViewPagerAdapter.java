@@ -33,5 +33,7 @@ import java.util.List;
         public void addFragment(int index, Fragment fragment) {
             fragmentsList.add(index, fragment);
         }
+
+
     }
 
