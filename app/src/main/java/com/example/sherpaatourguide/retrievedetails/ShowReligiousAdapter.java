@@ -2,65 +2,59 @@ package com.example.sherpaatourguide.retrievedetails;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.sherpaatourguide.R;
+import com.example.sherpaatourguide.activity.ui.DestinationData;
+import com.example.sherpaatourguide.activity.ui.ReligiousData;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ShowReligiousAdapter#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ShowReligiousAdapter extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class ShowReligiousAdapter extends FirebaseRecyclerAdapter<ReligiousData,ShowReligiousAdapter.relviewholder>  {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    public ShowReligiousAdapter() {
-        // Required empty public constructor
+    public ShowReligiousAdapter(@NonNull FirebaseRecyclerOptions<ReligiousData> options) {
+        super(options);
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ShowReligiousAdapter.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ShowReligiousAdapter newInstance(String param1, String param2) {
-        ShowReligiousAdapter fragment = new ShowReligiousAdapter();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @NonNull
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public relviewholder onCreateViewHolder(ViewGroup parent, int viewType){
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_show_religious,parent,false);
+        return new relviewholder(view);
+    }
+
+    class relviewholder extends RecyclerView.ViewHolder {
+        private ImageView relimg;
+        private TextView name, details, location;
+
+        public relviewholder(View itemView) {
+            super(itemView);
+            name = (TextView) itemView.findViewById(R.id.showrelName);
+
+            relimg = (ImageView) itemView.findViewById(R.id.showrelImage);
+            details = (TextView) itemView.findViewById(R.id.showrelDetail);
+            location = (TextView) itemView.findViewById(R.id.showrelLocation);
         }
-    }
+}
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_show_religious, container, false);
-    }
+    public void onBindViewHolder(@NonNull relviewholder holder, int position, ReligiousData model) {
+        holder.name.setText(model.getReName());
+        Glide.with(holder.relimg.getContext()).load(model.getReImageId()).into(holder.relimg);
+        holder.details.setText(model.getReDescription());
+        holder.location.setText(model.getReLocation());
+   }
 }
+
+

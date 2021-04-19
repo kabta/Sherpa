@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".maps.MapActivity"></activity>
+        <activity android:name=".weather.CityFinderActivity"></activity>
+        <activity android:name=".maps.MapActivity" />
         <activity android:name=".weather.WeatherActivity" />
         <activity
             android:name=".retrievedetails.ShowShoppingActivity"
@@ -66,7 +67,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".activity.LocationPermissionActivity" />
         <activity
             android:name=".activity.ui.dashboard.FactsActivity"
             android:label="Facts"
@@ -77,14 +77,10 @@
         <activity
             android:name=".activity.ui.dashboard.CommonPhrasesActivity"
             android:label="Common Phrases"
-            android:theme="@style/AppTheme.NoActionBar"
-             />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.ui.dashboard.EmergencyNumbersActivity"
             android:label="Emergency Numbers"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.WeatherCard"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.LoginActivity"

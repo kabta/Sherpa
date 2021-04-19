@@ -66,5 +66,6 @@ public class ShowBusAdapter extends FirebaseRecyclerAdapter<BusStationData,ShowB
 
     }
 
+
 }
 //use glide library to display image from url

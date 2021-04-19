@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.example.sherpaatourguide.AdminDashboardActivity;
 import com.example.sherpaatourguide.R;
-import com.example.sherpaatourguide.activity.LocationPermissionActivity;
+import com.example.sherpaatourguide.activity.ui.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -198,7 +198,7 @@ public class LoginFragment extends Fragment {
 
 
     void openHome() {
-        Intent locationIntent = new Intent(getActivity(), LocationPermissionActivity.class);
+        Intent locationIntent = new Intent(getActivity(), MainActivity.class);
         startActivity(locationIntent);
         getActivity().finish();
     }
