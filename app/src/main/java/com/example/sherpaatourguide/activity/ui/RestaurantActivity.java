@@ -19,8 +19,10 @@ import android.widget.Toast;
 
 import com.example.sherpaatourguide.AdminDashboardActivity;
 import com.example.sherpaatourguide.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -149,15 +151,27 @@ public class RestaurantActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            String resname = name.getText().toString();
-                            String resdescription = description.getText().toString();
-                            String reslocation = location.getText().toString();
-                            String resphone = phn.getText().toString();
+
                             pd.dismiss();
+                            final String[] img = new String[1];
+                            imgRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    String    url = task.getResult().toString();
+
+                                    String resname = name.getText().toString();
+                                    String resdescription = description.getText().toString();
+                                    String reslocation = location.getText().toString();
+                                    String resphone = phn.getText().toString();
+                                    RestaurantData resdata = new RestaurantData(resname,resdescription,reslocation,resphone, url);
+                                    String id = dbreff.push().getKey();
+                                    dbreff.child(id).setValue(resdata);
+                                }
+                            });
+
                             Snackbar.make(findViewById(android.R.id.content), "Data Uploaded", Snackbar.LENGTH_LONG).show();
-                            RestaurantData resdata = new RestaurantData(resname,resdescription,reslocation,resphone, taskSnapshot.getUploadSessionUri().toString());
-                            String id = dbreff.push().getKey();
-                            dbreff.child(id).setValue(resdata);
+
 
                         }
                     })

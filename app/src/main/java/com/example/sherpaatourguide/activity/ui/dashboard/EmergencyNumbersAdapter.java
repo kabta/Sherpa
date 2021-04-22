@@ -16,6 +16,8 @@ public class EmergencyNumbersAdapter extends RecyclerView.Adapter<EmergencyNumbe
 
     private EmergencyNumbersActivity context;
     private List<EmergencyNumber> emergencyNumbers;
+    private TextView tvcall;
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -39,6 +41,7 @@ public class EmergencyNumbersAdapter extends RecyclerView.Adapter<EmergencyNumbe
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_emergency_number, parent, false);
         return new ViewHolder(view);
+
     }
 
     @Override

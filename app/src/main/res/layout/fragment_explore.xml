@@ -73,14 +73,13 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="125dp"
+                        android:layout_height="110dp"
                         android:src="@drawable/ic_destination" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:background="#96000000"
                         android:orientation="vertical"
                         android:padding="2dp">
 
@@ -89,9 +88,8 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="4dp"
                             android:paddingEnd="4dp"
-                            android:background="@color/colorPrimaryDark"
                             android:text="Destinations"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -110,14 +108,13 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="125dp"
+                        android:layout_height="110dp"
                         android:src="@drawable/ic_religious" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:background="#96000000"
                         android:orientation="vertical"
                         android:padding="2dp">
 
@@ -127,8 +124,7 @@
                             android:paddingStart="4dp"
                             android:paddingEnd="4dp"
                             android:text="Religious places"
-                            android:background="@color/colorPrimaryDark"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -158,14 +154,13 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
+                        android:layout_height="110dp"
                         android:src="@drawable/ic_travel"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:background="#96000000"
                         android:orientation="vertical"
                         android:padding="2dp">
 
@@ -175,8 +170,7 @@
                             android:paddingStart="4dp"
                             android:paddingEnd="4dp"
                             android:text="Travel stations"
-                            android:textColor="@color/colorPrimary"
-                            android:background="@color/colorPrimaryDark"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -194,14 +188,13 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="125dp"
+                        android:layout_height="110dp"
                         android:src="@drawable/ic_restaurant" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:background="#96000000"
                         android:orientation="vertical"
                         android:padding="2dp">
 
@@ -211,8 +204,7 @@
                             android:paddingStart="4dp"
                             android:paddingEnd="4dp"
                             android:text="Restaurant and Hotels"
-                            android:background="@color/colorPrimaryDark"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -238,14 +230,13 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="125dp"
+                        android:layout_height="110dp"
                         android:src="@drawable/ic_shopping"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:background="#96000000"
                         android:orientation="vertical"
                         android:padding="2dp">
 
@@ -254,9 +245,8 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="4dp"
                             android:paddingEnd="4dp"
-                            android:background="@color/colorPrimaryDark"
                             android:text="Shopping Malls"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 

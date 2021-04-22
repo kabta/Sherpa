@@ -2,12 +2,12 @@ package com.example.sherpaatourguide.activity.ui.dashboard;
 
 public class CommonPhrase {
 
-    private String englishPhrase, arabicPhrase, arabicPhraseEnglishLetters;
+    private String englishPhrase, nepaliPhrase, arabicPhraseEnglishLetters;
     private int phraseIcon;
 
-    public CommonPhrase(String englishPhrase, String arabicPhrase, String arabicPhraseEnglishLetters, int phraseIcon) {
+    public CommonPhrase(String englishPhrase, String nepaliPhrase, String arabicPhraseEnglishLetters, int phraseIcon) {
         this.englishPhrase = englishPhrase;
-        this.arabicPhrase = arabicPhrase;
+        this.nepaliPhrase = nepaliPhrase;
         this.arabicPhraseEnglishLetters = arabicPhraseEnglishLetters;
         this.phraseIcon = phraseIcon;
     }
@@ -17,16 +17,15 @@ public class CommonPhrase {
     }
 
     public void setEnglishPhrase(String englishPhrase) {
-
         this.englishPhrase = englishPhrase;
     }
 
-    public String getArabicPhrase() {
-        return arabicPhrase;
+    public String getNepaliPhrase() {
+        return nepaliPhrase;
     }
 
-    public void setArabicPhrase(String arabicPhrase) {
-        this.arabicPhrase = arabicPhrase;
+    public void setNepaliPhrase(String nepaliPhrase) {
+        this.nepaliPhrase = nepaliPhrase;
     }
 
     public String getArabicPhraseEnglishLetters() {

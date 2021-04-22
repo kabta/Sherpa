@@ -27,12 +27,12 @@ public class CommonPhrasesActivity extends AppCompatActivity {
         //getSupportActionBar().setHomeButtonEnabled(true);
 
         List<CommonPhrase> commonPhrases = new ArrayList<>();
-        commonPhrases.add(new CommonPhrase("Hello", "صباح الفل", "Sabah al ful", R.drawable.phrase_hello));
-        commonPhrases.add(new CommonPhrase("Bye", "مع السلامة", "Ma'a el salama", R.drawable.phrase_bye));
-        commonPhrases.add(new CommonPhrase("Thank you", "شكرا", "Shukran", R.drawable.phrase_thanks));
-        commonPhrases.add(new CommonPhrase("Okay", "تمام", "Tamaam", R.drawable.phrase_okay));
-        commonPhrases.add(new CommonPhrase("No", "لا", "Laa", R.drawable.phrase_no));
-        commonPhrases.add(new CommonPhrase("Right here please", "على جمب لو سمحت", "Ala gamb lw samaht", R.drawable.phrase_right_here));
+        commonPhrases.add(new CommonPhrase("Hello", "नमस्कार", "Sabah al ful", R.drawable.phrase_hello));
+        commonPhrases.add(new CommonPhrase("Bye", "बिदाई ", "Ma'a el salama", R.drawable.phrase_bye));
+        commonPhrases.add(new CommonPhrase("Thank you", "धन्यवाद", "Shukran", R.drawable.phrase_thanks));
+        commonPhrases.add(new CommonPhrase("Okay", "ल", "Tamaam", R.drawable.phrase_okay));
+        commonPhrases.add(new CommonPhrase("No", "होईन", "Laa", R.drawable.phrase_no));
+        commonPhrases.add(new CommonPhrase("Right here please", "कृपया यहाँ", "Ala gamb lw samaht", R.drawable.phrase_right_here));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new CommonPhrasesAdapter(this, commonPhrases));

@@ -2,8 +2,10 @@ package com.example.sherpaatourguide.activity.ui.dashboard;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +22,7 @@ public class EmergencyNumbersActivity<PermissionHelperer> extends AppCompatActiv
     private String pendingPhone;
 
     private LinearLayout rootLayout;
-    private PermissionHelperer PermissionsHelper;
+    private TextView tvcall;
 
 
     @Override
@@ -30,6 +32,7 @@ public class EmergencyNumbersActivity<PermissionHelperer> extends AppCompatActiv
 
         rootLayout = findViewById(R.id.rootLayout);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
+
 
        // setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);

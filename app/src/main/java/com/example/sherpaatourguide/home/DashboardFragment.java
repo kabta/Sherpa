@@ -9,18 +9,28 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.example.sherpaatourguide.AdminDashboardActivity;
 import com.example.sherpaatourguide.R;
+import com.example.sherpaatourguide.Users;
+import com.example.sherpaatourguide.activity.LoginActivity;
 import com.example.sherpaatourguide.activity.ui.EventsActivity;
 import com.example.sherpaatourguide.activity.ui.dashboard.CommonPhrasesActivity;
 import com.example.sherpaatourguide.activity.ui.dashboard.EmergencyNumbersActivity;
 import com.example.sherpaatourguide.activity.ui.dashboard.FactsActivity;
 import com.example.sherpaatourguide.maps.MapActivity;
 import com.example.sherpaatourguide.weather.WeatherActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class DashboardFragment extends Fragment {
+
+    private FirebaseAuth mfirebaseAuth;
+    private TextView mTvEmail, mTvLogout;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,12 +65,26 @@ public class DashboardFragment extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
+        mTvEmail = view.findViewById(R.id.tv_email);
+        mTvLogout = view.findViewById(R.id.logout);
+        mTvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mfirebaseAuth.signOut();
+                signOutUser();
+            }
+        });
+
+
+        mfirebaseAuth = FirebaseAuth.getInstance();
         CardView CommonPhrase= view.findViewById(R.id.cv_CommonPhrases);
         CommonPhrase.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,4 +135,25 @@ public class DashboardFragment extends Fragment {
         return view;
 
 
-    }}
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser mFirebaseUser = mfirebaseAuth.getCurrentUser();
+        Users user = new Users();
+        if(mFirebaseUser!= null){
+           //mTvEmail.setText(mfirebaseAuth.getEmail());
+        }
+        else
+        {
+            mTvEmail.setText("THERE!!!");
+        }
+    }
+    private void signOutUser() {
+        Intent i = new Intent(getActivity(), LoginActivity.class);
+        startActivity(i);
+        getActivity().finish();
+        Toast.makeText(getActivity(),"Logout sucessful",Toast.LENGTH_SHORT).show();
+    }
+
+}

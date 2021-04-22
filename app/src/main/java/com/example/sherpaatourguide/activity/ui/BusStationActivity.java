@@ -20,8 +20,10 @@ import android.widget.Toast;
 import com.example.sherpaatourguide.AdminDashboardActivity;
 import com.example.sherpaatourguide.BusStationData;
 import com.example.sherpaatourguide.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -156,15 +158,27 @@ public class BusStationActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            String name = bsname.getText().toString();
-                            String description = bsdescription.getText().toString();
-                            String location = bslocation.getText().toString();
-                            String phone = bsphn.getText().toString();
+
                             pd.dismiss();
+                            final String[] img = new String[1];
+                       imgRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                           @Override
+                           public void onComplete(@NonNull Task<Uri> task) {
+                             String    url = task.getResult().toString();
+
+                               String name = bsname.getText().toString();
+                               String description = bsdescription.getText().toString();
+                               String location = bslocation.getText().toString();
+                               String phone = bsphn.getText().toString();
+
+                               BusStationData bsdata = new BusStationData(name,description,location,phone,url );
+                               String id = dbreff.push().getKey();
+                               dbreff.child(id).setValue(bsdata);
+
+                           }
+                       });
                             Snackbar.make(findViewById(android.R.id.content), "Data Uploaded", Snackbar.LENGTH_LONG).show();
-                            BusStationData bsdata = new BusStationData(name,description,location,phone, taskSnapshot.getUploadSessionUri().toString());
-                            String id = dbreff.push().getKey();
-                            dbreff.child(id).setValue(bsdata);
+
 
                         }
                     })
@@ -180,7 +194,16 @@ public class BusStationActivity extends AppCompatActivity {
                             double progressPercent = (100.00*snapshot.getBytesTransferred()/snapshot.getTotalByteCount());
                             pd.setMessage("Progress: "+(int) progressPercent+"%");
                         }
-                    });
+                    })
+            .addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+//                  task  taskif(task.isSuccessful())
+//                    Uri downloadUri =task.getResult().getStorage().getDownloadUrl().toString();
+                }
+            })
+            ;
+
         }
 
 

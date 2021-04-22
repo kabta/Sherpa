@@ -1,5 +1,7 @@
 package com.example.sherpaatourguide.retrievedetails;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -52,7 +54,7 @@ public class ShowShoppingAdapter extends FirebaseRecyclerAdapter<ShoppingMallsDa
 
     public class shopviewholder extends RecyclerView.ViewHolder {
         private ImageView shopimg;
-        private TextView name, details, phone, location;
+        private TextView name, details, phone, location, tvcall;
 
         public shopviewholder(View itemView) {
             super(itemView);
@@ -62,6 +64,19 @@ public class ShowShoppingAdapter extends FirebaseRecyclerAdapter<ShoppingMallsDa
             details = (TextView) itemView.findViewById(R.id.showshopDetail);
             location = (TextView) itemView.findViewById(R.id.showshopLocation);
             phone = (TextView) itemView.findViewById(R.id.showshopPhone);
+            tvcall = (TextView) itemView.findViewById(R.id.callshop);
+            tvcall.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int callphone = phone.getInputType();
+                    if(phone!= null){
+                        String s= "tel:" + callphone;
+                        Intent intent = new Intent((Intent.ACTION_CALL));
+                        intent.setData(Uri.parse(s));
+                        startListening();
+                    }
+                }
+            });
         }
     }
 }

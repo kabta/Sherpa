@@ -50,7 +50,7 @@ class CommonPhrasesAdapter extends RecyclerView.Adapter<CommonPhrasesAdapter.Vie
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final CommonPhrase commonPhrase = commonPhrases.get(position);
         holder.englishPhrase.setText(commonPhrase.getEnglishPhrase());
-        holder.arabicPhrase.setText(commonPhrase.getArabicPhrase());
+        holder.arabicPhrase.setText(commonPhrase.getNepaliPhrase());
         holder.arabicPhraseEnglishLetters.setText(commonPhrase.getArabicPhraseEnglishLetters());
         holder.phraseIcon.setImageResource(commonPhrase.getPhraseIcon());
         holder.view.setOnClickListener(new View.OnClickListener() {

@@ -3,7 +3,7 @@ package com.example.sherpaatourguide;
 public class Users {
 
     private String Uid;
-    private String Email;
+    private String uEmail;
     private String Password;
     private  int usertype;
 
@@ -21,7 +21,7 @@ public class Users {
 
     public Users( String uid, String email, String password, int usertype) {
         Uid = uid;
-        Email = email;
+        uEmail = email;
         Password = password;
         usertype = usertype;
 
@@ -35,11 +35,11 @@ public class Users {
     }
 
     public String getEmail() {
-        return Email;
+        return uEmail;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        uEmail = email;
     }
     public String getPassword() {
         return Password;
