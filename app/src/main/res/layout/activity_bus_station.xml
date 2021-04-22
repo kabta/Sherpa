@@ -43,7 +43,7 @@
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:textSize="25dp"
-            android:textStyle="italic" />
+            android:textStyle="normal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
             android:layout_marginBottom="5dp"
             android:textSize="25dp"
             android:inputType="textMultiLine"
-            android:textStyle="italic" />
+            android:textStyle="normal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,7 +78,7 @@
             android:layout_marginBottom="5dp"
             android:textSize="25dp"
             android:inputType="textMultiLine"
-            android:textStyle="italic" />
+            android:textStyle="normal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
             android:layout_marginBottom="5dp"
             android:textSize="25dp"
             android:inputType="number"
-            android:textStyle="italic" />
+            android:textStyle="normal" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,7 +111,6 @@
             android:layout_height="80dp"
             android:layout_marginBottom="5dp"
             android:textSize="25dp"
-            android:textStyle="italic"
 
             />
 

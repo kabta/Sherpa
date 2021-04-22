@@ -73,6 +73,7 @@ public class BusStationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(validateData()){
                     uploadPicture();
+                    finish();
 
                 }
             }
